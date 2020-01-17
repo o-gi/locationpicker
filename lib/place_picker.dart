@@ -296,7 +296,9 @@ class PlacePickerState extends State<PlacePicker> {
     var endpoint =
         "https://maps.googleapis.com/maps/api/place/autocomplete/json?" +
             "key=${widget.apiKey}&" +
-            "input={$place}&sessiontoken=${this.sessionToken}";
+            "input={$place}&" +
+            "language=ja&" +
+            "sessiontoken=${this.sessionToken}";
 
     if (this.locationResult != null) {
       endpoint += "&location=${this.locationResult.latLng.latitude}," +
@@ -347,7 +349,8 @@ class PlacePickerState extends State<PlacePicker> {
 
     String endpoint =
         "https://maps.googleapis.com/maps/api/place/details/json?key=${widget.apiKey}" +
-            "&placeid=$placeId";
+            "&placeid=$placeId" +
+            "language=ja";
 
     http.get(endpoint).then((response) {
       if (response.statusCode == 200) {
