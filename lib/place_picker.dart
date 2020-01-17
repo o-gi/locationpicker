@@ -350,7 +350,7 @@ class PlacePickerState extends State<PlacePicker> {
     String endpoint =
         "https://maps.googleapis.com/maps/api/place/details/json?key=${widget.apiKey}" +
             "&placeid=$placeId" +
-            "language=ja";
+            "&language=ja";
 
     http.get(endpoint).then((response) {
       if (response.statusCode == 200) {
